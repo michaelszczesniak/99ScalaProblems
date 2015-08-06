@@ -34,5 +34,21 @@ def flatten(list: List[Any]): List[Any] = list flatMap {
   case e => List(e)
 }
 
+//P8 - Eliminate consecutive duplicates of list elements.
+def compress[A](list: List[A]): List[A] =
+  list.foldLeft(List[A]()) { (list, foldVal) =>
+    if (list.isEmpty || list.head != foldVal) foldVal :: list
+    else list
+  }
+
+//P9 - Pack consecutive duplicates of list elements into sublists.
+def pack[A](list: List[A]): List[List[A]] = {
+  if(list.isEmpty) List(List())
+  else {
+
+  }
+}
+
+
 //for testing:
-flatten(List(List(1, 1), 2, List(3, List(5, 8))))
+pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
